@@ -13,7 +13,7 @@ const EditRestaurant = props => {
 
   useEffect( () => {
     console.log(props._id);
-    axios.get(`http://localhost:8000/restaurants/${props._id}`)
+    axios.get(`http://localhost:8000/api/restaurants/${props._id}`)
       .then(res => {
         console.log(res);
         setName(res.data.name);
@@ -26,7 +26,7 @@ const EditRestaurant = props => {
   const update = e => {
     e.preventDefault();
     const rest = {name, cuisine, yearEstablished, description};
-    axios.put(`http://localhost:8000/restaurants/${props._id}`, rest)
+    axios.put(`http://localhost:8000/api/restaurants/${props._id}`, rest)
       .then(res => {
         console.log(res);
         if(res.data.errors) {

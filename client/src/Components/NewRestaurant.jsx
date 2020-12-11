@@ -13,7 +13,7 @@ const NewRestaurant = props => {
   const add = e => {
     e.preventDefault();
     const rest = {name, cuisine, yearEstablished, description};
-    axios.post("http://localhost:8000/restaurants", rest)
+    axios.post("http://localhost:8000/api/restaurants", rest)
       .then(res => {
         console.log(res);
         if(res.data.errors) {

@@ -42,7 +42,7 @@ function bubble(restaurants) {
     }, []);
   
     function getAll() {
-      axios.get("http://localhost:8000/restaurants")
+      axios.get("http://localhost:8000/api/restaurants")
         .then(res => {
           console.log(res);
           setAll(
@@ -54,7 +54,7 @@ function bubble(restaurants) {
     }
   
     const remove = _id => {
-      axios.delete(`http://localhost:8000/restaurants/${_id}`)
+      axios.delete(`http://localhost:8000/api/restaurants/${_id}`)
         .then(res => {
           console.log(res);
           getAll();
